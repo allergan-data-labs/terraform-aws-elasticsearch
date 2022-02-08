@@ -218,6 +218,7 @@ Available targets:
 | <a name="input_auto_tune_duration_unit"></a> [auto\_tune\_duration\_unit](#input\_auto\_tune\_duration\_unit) | The unit of time specifying the duration of an Auto-Tune maintenance window. Valid values: HOURS. | `string` | `"HOURS"` | no |
 | <a name="input_auto_tune_duration_value"></a> [auto\_tune\_duration\_value](#input\_auto\_tune\_duration\_value) | An integer specifying the value of the duration of an Auto-Tune maintenance window. | `number` | `0` | no |
 | <a name="input_auto_tune_enabled"></a> [auto\_tune\_enabled](#input\_auto\_tune\_enabled) | Wheter to enable Auto-Tune. | `string` | `"DISABLED"` | no |
+| <a name="input_auto_tune_rollback_on_disable"></a> [auto\_tune\_rollback\_on\_disable](#input\_auto\_tune\_rollback\_on\_disable) | Whether to roll back to default Auto-Tune settings when disabling Auto-Tune. Valid values: DEFAULT\_ROLLBACK or NO\_ROLLBACK. | `string` | `"NO_ROLLBACK"` | no |
 | <a name="input_automated_snapshot_start_hour"></a> [automated\_snapshot\_start\_hour](#input\_automated\_snapshot\_start\_hour) | Hour at which automated snapshots are taken, in UTC | `number` | `0` | no |
 | <a name="input_availability_zone_count"></a> [availability\_zone\_count](#input\_availability\_zone\_count) | Number of Availability Zones for the domain to use. | `number` | `2` | no |
 | <a name="input_aws_ec2_service_name"></a> [aws\_ec2\_service\_name](#input\_aws\_ec2\_service\_name) | AWS EC2 Service Name | `list(string)` | <pre>[<br>  "ec2.amazonaws.com"<br>]</pre> | no |

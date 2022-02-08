@@ -387,3 +387,9 @@ variable "auto_tune_cron_expression_for_recurrence" {
   description = "A cron expression specifying the recurrence pattern for an Auto-Tune maintenance schedule."
   default     = ""
 }
+
+variable "auto_tune_rollback_on_disable" {
+  type        = string
+  description = "Whether to roll back to default Auto-Tune settings when disabling Auto-Tune. Valid values: DEFAULT_ROLLBACK or NO_ROLLBACK."
+  default     = "NO_ROLLBACK"
+}
