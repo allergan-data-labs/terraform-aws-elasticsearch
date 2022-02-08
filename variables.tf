@@ -363,3 +363,27 @@ variable "custom_endpoint_certificate_arn" {
   description = "ACM certificate ARN for custom endpoint."
   default     = ""
 }
+
+variable "auto_tune_enabled" {
+  type        = string
+  description = "Wheter to enable Auto-Tune."
+  default     = "DISABLED"
+}
+
+variable "auto_tune_duration_value" {
+  type        = number
+  description = "An integer specifying the value of the duration of an Auto-Tune maintenance window."
+  default     = 0
+}
+
+variable "auto_tune_duration_unit" {
+  type        = string
+  description = "The unit of time specifying the duration of an Auto-Tune maintenance window. Valid values: HOURS."
+  default     = "HOURS"
+}
+
+variable "auto_tune_cron_expression_for_recurrence" {
+  type        = string
+  description = "A cron expression specifying the recurrence pattern for an Auto-Tune maintenance schedule."
+  default     = ""
+}
