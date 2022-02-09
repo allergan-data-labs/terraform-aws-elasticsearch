@@ -166,7 +166,7 @@ resource "aws_elasticsearch_domain" "default" {
   auto_tune_options {
     desired_state = var.auto_tune_enabled
     maintenance_schedule {
-      start_at = timeadd(timestamp(), "1h")
+      start_at = var.auto_tune_start_at
       duration {
         value = var.auto_tune_duration_value
         unit  = var.auto_tune_duration_unit

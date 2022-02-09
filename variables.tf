@@ -370,6 +370,12 @@ variable "auto_tune_enabled" {
   default     = "DISABLED"
 }
 
+variable "auto_tune_start_at" {
+  type        = string
+  description = "Date and time at which to start the Auto-Tune maintenance schedule in RFC3339 format."
+  default     = ""
+}
+
 variable "auto_tune_duration_value" {
   type        = number
   description = "An integer specifying the value of the duration of an Auto-Tune maintenance window."
