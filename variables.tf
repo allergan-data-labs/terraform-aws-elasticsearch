@@ -238,6 +238,11 @@ variable "dedicated_master_type" {
   description = "Instance type of the dedicated master nodes in the cluster"
 }
 
+variable "access_policies" {
+  type        = string
+  description = "IAM policy document specifying the access policies for the domain."
+  default     = ""
+}
 variable "advanced_options" {
   type        = map(string)
   default     = {}
