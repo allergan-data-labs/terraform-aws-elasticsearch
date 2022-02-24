@@ -404,3 +404,51 @@ variable "auto_tune_rollback_on_disable" {
   description = "Whether to roll back to default Auto-Tune settings when disabling Auto-Tune. Valid values: DEFAULT_ROLLBACK or NO_ROLLBACK."
   default     = "NO_ROLLBACK"
 }
+
+variable "saml_enabled" {
+  type        = bool
+  description = "Whether to enable SAML authentication for the OpenSearch Dashboard (Kibana) domain."
+  default     = false
+}
+
+variable "saml_idp_entity_id" {
+  type        = string
+  description = "(Required) The unique Entity ID of the application in SAML Identity Provider."
+  default     = ""
+}
+
+variable "saml_idp_metadata_content" {
+  type        = string
+  description = "(Required) The Metadata of the SAML application in xml format."
+  default     = ""
+}
+
+variable "saml_master_backend_role" {
+  type        = string
+  description = "This backend role from the SAML IdP receives full permissions to the cluster, equivalent to a new master user."
+  default     = ""
+}
+
+variable "saml_master_user_name" {
+  type        = string
+  description = "This username from the SAML IdP receives full permissions to the cluster, equivalent to a new master user."
+  default     = ""
+}
+
+variable "saml_master_roles_key" {
+  type        = string
+  description = "Element of the SAML assertion to use for backend roles. Default is roles."
+  default     = ""
+}
+
+variable "saml_session_timeout_minutes" {
+  type        = number
+  description = "Duration of a session in minutes after a user logs in. Default is 60. Maximum value is 1,440."
+  default     = 60
+}
+
+variable "saml_subject_key" {
+  type        = string
+  description = "Element of the SAML assertion to use for username. Default is NameID."
+  default     = ""
+}
