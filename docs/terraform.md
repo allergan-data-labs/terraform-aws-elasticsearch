@@ -120,11 +120,11 @@
 | <a name="input_saml_enabled"></a> [saml\_enabled](#input\_saml\_enabled) | Whether to enable SAML authentication for the OpenSearch Dashboard (Kibana) domain. | `bool` | `false` | no |
 | <a name="input_saml_idp_entity_id"></a> [saml\_idp\_entity\_id](#input\_saml\_idp\_entity\_id) | (Required) The unique Entity ID of the application in SAML Identity Provider. | `string` | `""` | no |
 | <a name="input_saml_idp_metadata_content"></a> [saml\_idp\_metadata\_content](#input\_saml\_idp\_metadata\_content) | (Required) The Metadata of the SAML application in xml format. | `string` | `""` | no |
-| <a name="input_saml_master_backend_role"></a> [saml\_master\_backend\_role](#input\_saml\_master\_backend\_role) | This backend role from the SAML IdP receives full permissions to the cluster, equivalent to a new master user. | `string` | `""` | no |
-| <a name="input_saml_master_roles_key"></a> [saml\_master\_roles\_key](#input\_saml\_master\_roles\_key) | Element of the SAML assertion to use for backend roles. Default is roles. | `string` | `""` | no |
-| <a name="input_saml_master_user_name"></a> [saml\_master\_user\_name](#input\_saml\_master\_user\_name) | This username from the SAML IdP receives full permissions to the cluster, equivalent to a new master user. | `string` | `""` | no |
+| <a name="input_saml_master_backend_role"></a> [saml\_master\_backend\_role](#input\_saml\_master\_backend\_role) | This backend role from the SAML IdP receives full permissions to the cluster, equivalent to a new master user. | `string` | `null` | no |
+| <a name="input_saml_master_roles_key"></a> [saml\_master\_roles\_key](#input\_saml\_master\_roles\_key) | Element of the SAML assertion to use for backend roles. Default is roles. | `string` | `null` | no |
+| <a name="input_saml_master_user_name"></a> [saml\_master\_user\_name](#input\_saml\_master\_user\_name) | This username from the SAML IdP receives full permissions to the cluster, equivalent to a new master user. | `string` | `null` | no |
 | <a name="input_saml_session_timeout_minutes"></a> [saml\_session\_timeout\_minutes](#input\_saml\_session\_timeout\_minutes) | Duration of a session in minutes after a user logs in. Default is 60. Maximum value is 1,440. | `number` | `60` | no |
-| <a name="input_saml_subject_key"></a> [saml\_subject\_key](#input\_saml\_subject\_key) | Element of the SAML assertion to use for username. Default is NameID. | `string` | `""` | no |
+| <a name="input_saml_subject_key"></a> [saml\_subject\_key](#input\_saml\_subject\_key) | Element of the SAML assertion to use for username. Default is NameID. | `string` | `null` | no |
 | <a name="input_security_groups"></a> [security\_groups](#input\_security\_groups) | List of security group IDs to be allowed to connect to the cluster | `list(string)` | `[]` | no |
 | <a name="input_stage"></a> [stage](#input\_stage) | ID element. Usually used to indicate role, e.g. 'prod', 'staging', 'source', 'build', 'test', 'deploy', 'release' | `string` | `null` | no |
 | <a name="input_subnet_ids"></a> [subnet\_ids](#input\_subnet\_ids) | VPC Subnet IDs | `list(string)` | `[]` | no |

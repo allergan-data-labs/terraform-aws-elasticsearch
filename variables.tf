@@ -426,19 +426,19 @@ variable "saml_idp_metadata_content" {
 variable "saml_master_backend_role" {
   type        = string
   description = "This backend role from the SAML IdP receives full permissions to the cluster, equivalent to a new master user."
-  default     = ""
+  default     = null
 }
 
 variable "saml_master_user_name" {
   type        = string
   description = "This username from the SAML IdP receives full permissions to the cluster, equivalent to a new master user."
-  default     = ""
+  default     = null
 }
 
 variable "saml_master_roles_key" {
   type        = string
   description = "Element of the SAML assertion to use for backend roles. Default is roles."
-  default     = ""
+  default     = null
 }
 
 variable "saml_session_timeout_minutes" {
@@ -450,5 +450,5 @@ variable "saml_session_timeout_minutes" {
 variable "saml_subject_key" {
   type        = string
   description = "Element of the SAML assertion to use for username. Default is NameID."
-  default     = ""
+  default     = null
 }
