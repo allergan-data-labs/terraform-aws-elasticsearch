@@ -231,7 +231,7 @@ resource "aws_elasticsearch_domain" "default" {
 
 resource "aws_elasticsearch_domain_saml_options" "default" {
   count       = var.saml_enabled ? 1 : 0
-  domain_name = aws_elasticsearch_domain.default.domain_name
+  domain_name = aws_elasticsearch_domain.default[0].domain_name
   saml_options {
     enabled = var.saml_enabled
     idp {
