@@ -229,6 +229,23 @@ resource "aws_elasticsearch_domain" "default" {
   depends_on = [aws_iam_service_linked_role.default]
 }
 
+resource "aws_elasticsearch_domain_saml_options" "default" {
+  count       = var.saml_enabled ? 1 : 0
+  domain_name = aws_elasticsearch_domain.default[0].domain_name
+  saml_options {
+    enabled = var.saml_enabled
+    idp {
+      entity_id        = var.saml_idp_entity_id
+      metadata_content = var.saml_idp_metadata_content
+    }
+    master_backend_role     = var.saml_master_backend_role
+    master_user_name        = var.saml_master_user_name
+    roles_key               = var.saml_master_roles_key
+    session_timeout_minutes = var.saml_session_timeout_minutes
+    subject_key             = var.saml_subject_key
+  }
+}
+
 data "aws_iam_policy_document" "default" {
   count = module.this.enabled && (length(var.iam_authorizing_role_arns) > 0 || length(var.iam_role_arns) > 0) && var.access_policies == "" ? 1 : 0
 
