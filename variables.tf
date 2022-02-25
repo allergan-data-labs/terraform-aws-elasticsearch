@@ -435,7 +435,12 @@ variable "saml_master_user_name" {
   default     = null
 }
 
-variable "saml_master_roles_key" {
+variable "saml_subject_key" {
+  type        = string
+  description = "Element of the SAML assertion to use for username. Default is NameID."
+  default     = null
+}
+variable "saml_roles_key" {
   type        = string
   description = "Element of the SAML assertion to use for backend roles. Default is roles."
   default     = null
@@ -445,10 +450,4 @@ variable "saml_session_timeout_minutes" {
   type        = number
   description = "Duration of a session in minutes after a user logs in. Default is 60. Maximum value is 1,440."
   default     = 60
-}
-
-variable "saml_subject_key" {
-  type        = string
-  description = "Element of the SAML assertion to use for username. Default is NameID."
-  default     = null
 }

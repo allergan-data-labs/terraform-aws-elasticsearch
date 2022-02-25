@@ -240,9 +240,9 @@ resource "aws_elasticsearch_domain_saml_options" "default" {
     }
     master_backend_role     = var.saml_master_backend_role
     master_user_name        = var.saml_master_user_name
-    roles_key               = var.saml_master_roles_key
-    session_timeout_minutes = var.saml_session_timeout_minutes
     subject_key             = var.saml_subject_key
+    roles_key               = var.saml_roles_key
+    session_timeout_minutes = var.saml_session_timeout_minutes
   }
 }
 
