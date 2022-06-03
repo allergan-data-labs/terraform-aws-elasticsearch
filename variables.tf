@@ -438,7 +438,7 @@ variable "saml_master_user_name" {
 variable "saml_subject_key" {
   type        = string
   description = "Element of the SAML assertion to use for username. Default is NameID."
-  default     = null
+  default     = ""
 }
 variable "saml_roles_key" {
   type        = string
