@@ -1,0 +1,20 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: terraform-aws-elasticsearch
+  annotations:
+    github.com/project-slug: allergan-data-labs/terraform-aws-elasticsearch
+    backstage.io/techdocs-ref: dir:.
+  tags:
+    - terraform
+    - aws
+  links:
+    - url: https://registry.terraform.io/providers/hashicorp/aws/latest/docs
+      title: Terraform Docs
+      icon: cloud
+
+spec:
+  type: library
+  lifecycle: production
+  system: "system:default/terraform-modules"
+  owner: "group:default/cloud-infrastructure-squad"
